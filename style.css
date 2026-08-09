@@ -1265,6 +1265,7 @@ body.scroll-locked {
   grid-template-columns: 1fr;
   gap: 14px;
   max-width: 760px;
+  width: 100%;
   margin: 0 auto;
 }
 
