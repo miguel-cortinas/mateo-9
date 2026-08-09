@@ -3,16 +3,16 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <meta name="description"
-    content="Mateo cumple 9 años — Invitación temática Messi. El partido más importante del año.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="only light">
+  <meta name="description" content="Mateo cumple 9 años. ¡Estás invitado al partido más importante del año!">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-  <!-- ═══ Open Graph / WhatsApp ═══ -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mateo-9.pages.dev/">
   <meta property="og:title" content="🎂 Cumpleaños de Mateo · 9 Años">
-  <meta property="og:description"
-    content="Mateo cumple 9 años y te convoca.¡Estás invitado al partido más importante del año!">
+  <meta property="og:description" content="Mateo cumple 9 años y te convoca. ¡Estás invitado al partido más importante del año!">
   <meta property="og:site_name" content="Cumple de Mateo">
   <meta property="og:image" content="https://mateo-9.pages.dev/img/preview.jpg">
   <meta property="og:image:width" content="1024">
@@ -20,14 +20,12 @@
   <meta property="og:image:alt" content="Invitación de cumpleaños de Mateo — temática Messi">
   <meta property="og:locale" content="es_MX">
 
-  <!-- ═══ Twitter Card (también usado por WhatsApp Web) ═══ -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="🎂 Cumpleaños de Mateo · 9 Años">
-  <meta name="twitter:description"
-    content="Mateo cumple 9 años y te convoca. ¡Estás invitado al partido más importante del año!">
+  <meta name="twitter:description" content="Mateo cumple 9 años y te convoca. ¡Estás invitado al partido más importante del año!">
   <meta name="twitter:image" content="https://mateo-9.pages.dev/img/preview.jpg">
 
-  <title>Cumple de Mateo · #10</title>
+  <title>Cumple de Mateo · 9 Años</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -38,35 +36,26 @@
 
 <body>
 
-  <!-- ══════════════════════════════════════
-       OPENING — EL CRACK (black / gold)
-  ══════════════════════════════════════ -->
   <section id="opening" class="opening opening-crack">
-
-    <!-- Contenido central -->
     <div class="opening-overlay">
       <div class="opening-content opening-crack-content">
 
-        <!-- Escudo / eyebrow -->
         <div class="crack-eyebrow">
           <span class="crack-eyebrow-line"></span>
           <span class="crack-eyebrow-text">CUMPLEAÑOS</span>
           <span class="crack-eyebrow-line"></span>
         </div>
 
-        <!-- Nombre + edad -->
         <h1 class="crack-title">
           <span class="crack-name">MATEO</span>
           <span class="crack-age">9</span>
           <span class="crack-years">AÑOS</span>
         </h1>
 
-        <!-- Línea divisora dorada -->
         <div class="crack-divider" aria-hidden="true"></div>
 
-        <!-- Botón KICK OFF con heartbeat -->
         <button id="kickoff-btn" class="kickoff-btn kickoff-heartbeat" aria-label="Iniciar celebración">
-          <img src="../img/pelota.png" alt="" class="kickoff-ball-img" aria-hidden="true">
+          <img src="../img/pelota.png" alt="" class="kickoff-ball-img" aria-hidden="true" loading="eager">
           <span class="kickoff-text">KICK OFF</span>
           <span class="kickoff-sheen" aria-hidden="true"></span>
         </button>
@@ -74,20 +63,13 @@
         <p class="opening-hint crack-hint">Presiona para comenzar</p>
       </div>
     </div>
-
   </section>
 
-  <!-- ══════════════════════════════════════
-       PANTALLA DE VIDEO MESSI (fullscreen)
-  ══════════════════════════════════════ -->
   <div id="messi-video-screen" class="messi-video-screen" aria-hidden="true" aria-label="Clip de Messi">
-
-    <!-- VIDEO REAL — se activa cuando CONFIG.messiVideo tiene valor -->
     <video id="messi-video" class="messi-video-el" playsinline preload="none" aria-label="Clip de Messi"
       style="display:none">
     </video>
 
-    <!-- PLACEHOLDER — visible mientras no hay video -->
     <div id="messi-placeholder" class="messi-placeholder">
       <div class="mp-inner">
         <div class="mp-badge">🐐</div>
@@ -100,10 +82,8 @@
       </div>
     </div>
 
-    <!-- Overlay dorado de zoom-out post-video -->
     <div id="video-zoom-overlay" class="video-zoom-overlay"></div>
 
-    <!-- Botón Skip estilo YouTube -->
     <button id="skip-btn" class="skip-btn" aria-label="Saltar video" hidden>
       <span class="skip-icon">
         <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" aria-hidden="true">
@@ -114,42 +94,16 @@
     </button>
   </div>
 
-  <!-- ══════════════════════════════════════
-       CAPA DE TRANSICIÓN
-  ══════════════════════════════════════ -->
   <div id="transition-layer" class="transition-layer" aria-hidden="true">
     <div id="flying-ball" class="flying-ball">
-      <img src="../img/pelota.png" alt="" draggable="false">
+      <img src="../img/pelota.png" alt="" draggable="false" loading="eager">
     </div>
-    <div id="crack-overlay" class="crack-overlay">
-      <svg class="crack-svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice">
-        <!-- Núcleo del impacto: destello que "estalla" en el punto donde pega el balón -->
-        <circle cx="50" cy="50" r="6" class="impact-core" />
-
-        <!-- Grietas (radian del punto de impacto) -->
-        <polyline points="50.0,50.0 62.2,49.6 78.7,49.6 93.1,49.8 105.2,48.4" class="crack cp c1"
-          style="--d:0.04s;--sw:2" />
-        <polyline points="50.0,50.0 62.2,57.9 74.0,74.1 87.5,84.4 99.8,92.2" class="crack cp c2"
-          style="--d:0.08s;--sw:2.1" />
-        <polyline points="50.0,50.0 46.2,61.9 40.2,78.0 36.7,92.5 32.6,104.3" class="crack cp c4"
-          style="--d:0.05s;--sw:1.7" />
-        <polyline points="50.0,50.0 41.6,53.1 31.9,60.7 22.7,65.6 14.3,68.8" class="crack cp c5"
-          style="--d:0.02s;--sw:2" />
-        <polyline points="50.0,50.0 40.2,39.4 27.1,24.6 12.6,14.9 2.6,4.5" class="crack cp c7"
-          style="--d:0.03s;--sw:2.1" />
-        <polyline points="50.0,50.0 61.3,41.6 78.1,32.5 93.8,26.5 105.0,17.9" class="crack cp c10"
-          style="--d:0.01s;--sw:2.1" />
-      </svg>
-    </div>
+    <canvas id="crack-canvas" class="crack-canvas"></canvas>
     <div id="flash-overlay" class="flash-overlay"></div>
   </div>
 
-  <!-- ══════════════════════════════════════
-       CONTENIDO PRINCIPAL
-  ══════════════════════════════════════ -->
   <main id="main-content" class="main-content">
 
-    <!-- ── S1: MENSAJE DE INVITACIÓN — fondo messi 1 ── -->
     <section id="invitacion" class="sec-bg" style="--bg:url('../img/fondo-messi-1.jpg')">
       <div class="sec-overlay invite-overlay">
 
@@ -174,19 +128,17 @@
       </div>
     </section>
 
-    <!-- Onda de transición -->
     <div class="wave wave-dark" aria-hidden="true">
       <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0,60 C360,0 1080,0 1440,60 L1440,60 L0,60 Z" fill="var(--dark)" />
       </svg>
     </div>
 
-    <!-- ── S2: CUENTA REGRESIVA — fondo messi 2 ── -->
     <section id="cuenta" class="sec-bg" style="--bg:url('../img/fondo-messi-2.jpg')">
       <div class="sec-overlay">
         <div class="section-header">
           <p class="section-eyebrow animate-in">CUENTA REGRESIVA</p>
-          <img src="../img/tiempo%20para%20el%20partido.png" alt="TIEMPO PARA EL PARTIDO" class="animate-in"
+          <img src="../img/tiempo%20para%20el%20partido.png" alt="TIEMPO PARA EL PARTIDO" class="animate-in" loading="lazy"
             style="max-width: 380px; width: 90%; margin: 0 auto; display: block;">
         </div>
         <div class="scoreboard animate-in delay-200">
@@ -230,12 +182,11 @@
       </svg>
     </div>
 
-    <!-- ── S3: DATOS DEL PARTIDO — fondo messi 3 ── -->
     <section id="detalles" class="sec-bg" style="--bg:url('../img/fondo-messi-3.jpg')">
       <div class="sec-overlay">
         <div class="section-header">
           <p class="section-eyebrow animate-in">INFORMACIÓN</p>
-          <img src="../img/datos%20del%20partido.png" alt="DATOS DEL PARTIDO" class="animate-in"
+          <img src="../img/datos%20del%20partido.png" alt="DATOS DEL PARTIDO" class="animate-in" loading="lazy"
             style="max-width: 380px; width: 90%; margin: 0 auto; display: block;">
         </div>
         <div class="details-grid">
@@ -257,10 +208,8 @@
         </div>
       </div>
 
-      <!-- ── MAPA DE UBICACIÓN ── -->
       <div class="map-card animate-in delay-400">
 
-        <!-- Cabecera de la tarjeta -->
         <div class="map-card-header">
           <span class="map-card-pin" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
@@ -272,7 +221,6 @@
           <span class="map-card-badge">EN VIVO</span>
         </div>
 
-        <!-- Iframe del mapa -->
         <div class="map-iframe-wrap">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3501.205582036787!2d-106.01984382449845!3d28.653562475653175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjjCsDM5JzEyLjgiTiAxMDbCsDAxJzAyLjIiVw!5e0!3m2!1ses!2smx!4v1786226352316!5m2!1ses!2smx"
@@ -281,7 +229,6 @@
           </iframe>
         </div>
 
-        <!-- Footer con dirección + botón -->
         <div class="map-card-footer">
           <div class="map-card-address">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"
@@ -312,12 +259,11 @@
       </svg>
     </div>
 
-    <!-- ── S4: REGLAMENTO — fondo messi 4 ── -->
     <section id="reglas" class="sec-bg" style="--bg:url('../img/fondo-messi-4.jpg')">
       <div class="sec-overlay">
         <div class="section-header">
           <p class="section-eyebrow animate-in">PROTOCOLO</p>
-          <img src="../img/importante.png" alt="IMPORTANTE" class="animate-in"
+          <img src="../img/importante.png" alt="IMPORTANTE" class="animate-in" loading="lazy"
             style="max-width: 380px; width: 90%; margin: 0 auto; display: block;">
         </div>
         <div class="dresscode-card animate-in delay-100">
@@ -347,11 +293,7 @@
       </svg>
     </div>
 
-
-
-    <!-- ── S7: RSVP — fondo messi 2 ── -->
     <section id="rsvp" class="sec-bg" style="--bg:url('../img/fondo-messi-2.jpg')">
-      <!-- Franja Argentina encima del fondo -->
       <div class="arg-strip" aria-hidden="true">
         <div class="as-c"></div>
         <div class="as-w"></div>
@@ -361,7 +303,7 @@
       <div class="sec-overlay rsvp-sec-overlay">
         <div class="rsvp-content animate-in">
           <p class="rsvp-eyebrow">CONFIRMACIÓN</p>
-          <img src="../img/confirma%20tu%20asistencia.png" alt="CONFIRMA TU ASISTENCIA"
+          <img src="../img/confirma%20tu%20asistencia.png" alt="CONFIRMA TU ASISTENCIA" loading="lazy"
             style="max-width: 480px; width: 95%; margin: 0 auto; display: block;">
           <p class="rsvp-sub">La afición necesita saber si vas a estar presente en este partido histórico</p>
           <button id="rsvp-btn" class="rsvp-btn">
@@ -377,8 +319,6 @@
 
       <canvas id="confetti-canvas" class="confetti-canvas" aria-hidden="true"></canvas>
     </section>
-
-
 
   </main>
 
