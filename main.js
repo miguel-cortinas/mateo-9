@@ -12,7 +12,7 @@ const CONFIG = {
   whatsappNumber: '526144948844',
 
   // Mensaje prefilled
-  whatsappMsg: 'Hola! Confirmo mi asistencia al cumpleanios de Mateo. Soy: ',
+  whatsappMsg: 'Hola!\nConfirmo mi asistencia al cumpleaños de Mateo.',
 
   // Link de Google Maps (actualizar cuando este disponible)
   mapsUrl: 'https://www.google.com/maps/search/?api=1&query=28.653562475653175,-106.01984382449845',
